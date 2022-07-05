@@ -1,3 +1,17 @@
+# Getting dependences
+
+## Commands
+
+Install material UI
+
+### npm install @mui/material @mui/styled-engine-sc styled-components
+
+### npm install @mui/icons-material
+
+Install styled components
+
+### npm install --save styled-components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
