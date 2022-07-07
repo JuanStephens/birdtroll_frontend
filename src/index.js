@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { Login } from "./componentes/login";
 import { Home } from "./componentes/home";
