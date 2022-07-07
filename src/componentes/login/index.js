@@ -63,7 +63,7 @@ export const Login = () => {
             <input 
             type="text"  
             id="username"
-            ref={useRef}
+            ref={userRef}
             onChange={(e) => setUser(e.target.value)}
             value = {user}
             required                
