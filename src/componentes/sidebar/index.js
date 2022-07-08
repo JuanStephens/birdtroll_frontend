@@ -26,7 +26,7 @@ export const Sidebar = () => {
 
       <Link onClick={(e) => activaOption("Inicio", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Inicio" ? true : false}
+          active={activeOption === "Inicio" ? true : false}
           text="Inicio"
           link="/"
           Icon={HomeIcon}
@@ -34,7 +34,7 @@ export const Sidebar = () => {
       </Link>
       <Link onClick={(e) => activaOption("Explorar", e)} className="mediasocial-option" to="/login">
         <IconOption
-          active={activeOption == "Explorar" ? true : false}
+          active={activeOption === "Explorar" ? true : false}
           text="Explorar"
           link="/login"
           Icon={TagIcon}
@@ -42,7 +42,7 @@ export const Sidebar = () => {
       </Link>
       <Link onClick={(e) => activaOption("Notificaciones", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Notificaciones" ? true : false}
+          active={activeOption === "Notificaciones" ? true : false}
           text="Notificaciones"
           link="/"
           Icon={NotificationsNoneIcon}
@@ -51,7 +51,7 @@ export const Sidebar = () => {
 
       <Link onClick={(e) => activaOption("Mensajes", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Mensajes" ? true : false}
+          active={activeOption === "Mensajes" ? true : false}
           text="Mensajes"
           link="/"
           Icon={MailOutlineIcon}
@@ -59,7 +59,7 @@ export const Sidebar = () => {
       </Link>
       <Link onClick={(e) => activaOption("Guardados", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Guardados" ? true : false}
+          active={activeOption === "Guardados" ? true : false}
           primary
           text="Guardados"
           link="/"
@@ -68,25 +68,25 @@ export const Sidebar = () => {
       </Link>
       <Link onClick={(e) => activaOption("Listas", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Listas" ? true : false}
+          active={activeOption === "Listas" ? true : false}
           primary
           text="Listas"
           link="/"
           Icon={FeaturedPlayListOutlinedIcon}
         />
       </Link>
-      <Link onClick={(e) => activaOption("Perfil", e)} className="mediasocial-option" to="/">
+      <Link onClick={(e) => activaOption("Perfil", e)} className="mediasocial-option" to="/profile">
         <IconOption
-          active={activeOption == "Perfil" ? true : false}
+          active={activeOption === "Perfil" ? true : false}
           primary
           text="Perfil"
-          link="/"
+          link="/profile"
           Icon={PermIdentityOutlinedIcon}
         />
       </Link>
       <Link onClick={(e) => activaOption("Opcion", e)} className="mediasocial-option" to="/">
         <IconOption
-          active={activeOption == "Opcion" ? true : false}
+          active={activeOption === "Opcion" ? true : false}
           primary
           text="Más Opciones"
           link="/"
