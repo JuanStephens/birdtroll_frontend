@@ -1,7 +1,11 @@
 import styled, {css} from "styled-components";
 
 export const Container = styled.div`
-  flex: 0.5;
+  display: flex;
+  flex: 0.6;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-right: 1px solid #eff3f4;
   overflow-y: scroll;
   box-sizing: border-sizing;
@@ -32,6 +36,9 @@ section {
   justify-content: flex-start;
   padding: 1rem;
   background-color: rgba(29,161,242,3);
+  
+ 
+
 }
 
 form {
@@ -129,7 +136,9 @@ padding: 0.5rem;
 }
 `;
 
-export const Header = styled.header``;
+export const Header = styled.header`
+
+`;
 
 /*TweetBox*/
 export const Tweetbox = styled.div`
