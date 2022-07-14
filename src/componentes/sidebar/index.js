@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Contenedor } from "./styles";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeIcon from "@mui/icons-material/Home";
-import TagIcon from "@mui/icons-material/Tag";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import LoginIcon from '@mui/icons-material/Login';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import FeaturedPlayListOutlinedIcon from "@mui/icons-material/FeaturedPlayListOutlined";
@@ -32,24 +32,23 @@ export const Sidebar = () => {
           Icon={HomeIcon}
         />
       </Link>
-      <Link onClick={(e) => activaOption("Explorar", e)} className="mediasocial-option" to="/login">
+      <Link onClick={(e) => activaOption("Login", e)} className="mediasocial-option" to="/login">
         <IconOption
-          active={activeOption === "Explorar" ? true : false}
-          text="Explorar"
+          active={activeOption === "Login" ? true : false}
+          text="Login"
           link="/login"
-          Icon={TagIcon}
+          Icon={LoginIcon}
         />
       </Link>
-      <Link onClick={(e) => activaOption("Notificaciones", e)} className="mediasocial-option" to="/">
+      <Link onClick={(e) => activaOption("Register", e)} className="mediasocial-option" to="/register">
         <IconOption
-          active={activeOption === "Notificaciones" ? true : false}
-          text="Notificaciones"
-          link="/"
-          Icon={NotificationsNoneIcon}
+          active={activeOption === "Register" ? true : false}
+          text="Registro"
+          link="/register"
+          Icon={HowToRegIcon}
         />
       </Link>
-
-      <Link onClick={(e) => activaOption("Mensajes", e)} className="mediasocial-option" to="/">
+{/*<Link onClick={(e) => activaOption("Mensajes", e)} className="mediasocial-option" to="/">
         <IconOption
           active={activeOption === "Mensajes" ? true : false}
           text="Mensajes"
@@ -57,6 +56,18 @@ export const Sidebar = () => {
           Icon={MailOutlineIcon}
         />
       </Link>
+
+      <Link onClick={(e) => activaOption("Opcion", e)} className="mediasocial-option" to="/">
+        <IconOption
+          active={activeOption === "Opcion" ? true : false}
+          primary
+          text="Más Opciones"
+          link="/"
+          Icon={MoreHorizOutlinedIcon}
+        />
+      </Link>
+
+
       <Link onClick={(e) => activaOption("Guardados", e)} className="mediasocial-option" to="/">
         <IconOption
           active={activeOption === "Guardados" ? true : false}
@@ -74,7 +85,8 @@ export const Sidebar = () => {
           link="/"
           Icon={FeaturedPlayListOutlinedIcon}
         />
-      </Link>
+      </Link>*/}
+      
       <Link onClick={(e) => activaOption("Perfil", e)} className="mediasocial-option" to="/profile">
         <IconOption
           active={activeOption === "Perfil" ? true : false}
@@ -84,15 +96,7 @@ export const Sidebar = () => {
           Icon={PermIdentityOutlinedIcon}
         />
       </Link>
-      <Link onClick={(e) => activaOption("Opcion", e)} className="mediasocial-option" to="/">
-        <IconOption
-          active={activeOption === "Opcion" ? true : false}
-          primary
-          text="Más Opciones"
-          link="/"
-          Icon={MoreHorizOutlinedIcon}
-        />
-      </Link>
+      
 
       <Button variant="outlined" fullWidth>
         Tweet

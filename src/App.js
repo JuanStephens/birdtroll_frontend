@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from "react"
+import { Card, Tab, Tabs } from "@blueprintjs/core"
 import GlobalStyles from './styles/GlobalStyles'
 import { Home } from "./componentes/home";
 import { Sidebar } from "./componentes/sidebar";
 import { Widgets } from "./componentes/widgets";
 import { Login } from "./componentes/login";
-import {Profile} from "./componentes/profile"
+import { Register } from "./componentes/register";
+import {Profile} from "./componentes/profile";
 import {
   Routes,
   Route,
@@ -12,16 +15,30 @@ import {
 
 
 function App() {
+  const [currentTab, setCurrentTab] = useState("login")
+
   return (
+
     <div className="App">
-    <Sidebar />
+      
+    {/* div className="App">
+         <Card elevation="1">
+      <Tabs id="Tabs" onChange={setCurrentTab} selectedTabId={currentTab}>
+        <Tab id="login" title="Login" panel={<Login />} />
+        <Tab id="register" title="Register" panel={<Register />} />
+        <Tabs.Expander />
+      </Tabs>
+    </Card> */}
+    
+  <Sidebar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
     <Widgets />
-    <GlobalStyles />
+    <GlobalStyles /> 
+  
     </div>
   );
 }

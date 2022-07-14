@@ -7,26 +7,12 @@ import {
 } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Profile } from "./componentes/profile";
-import { Login } from "./componentes/login";
-import { Home } from "./componentes/home";
-import { Sidebar } from "./componentes/sidebar";
-import { Widgets } from "./componentes/widgets";
-import GlobalStyles from './styles/GlobalStyles'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-   <div className="App">
-    <Sidebar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/profile" element={<Profile />} />
-    </Routes>
-    <Widgets />
-    <GlobalStyles />
-    </div>
+  <App></App>
+
   </BrowserRouter>
 );
 
