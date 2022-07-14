@@ -87,7 +87,7 @@ export const Login = () => {
             <span className="line">
 
               {/*Link de redireccion a creacion de cuenta si existe*/}
-             <Link to ="/">Registro</Link>
+             <Link to ="/register">Registro</Link>
             </span>
 
 
