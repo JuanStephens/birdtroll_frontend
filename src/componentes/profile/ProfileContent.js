@@ -4,6 +4,7 @@ import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
 import GifBoxOutlinedIcon from "@mui/icons-material/GifBoxOutlined";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import User from "../../img/usuario.png";
 
@@ -120,6 +121,19 @@ export const ProfileContent= () => {
           />
           <Button onClick={sendTweet}>Tweet</Button>
         </Div>
+
+        <p>
+
+Mejorar a Premium <br/>
+<span className="line">
+
+  {/*Link de redireccion a creacion de cuenta si existe*/}
+ <Link to ="/yappy">Pagar con Yappy</Link>
+</span>
+
+
+</p>
+
       </Form>
     </Tweetbox>
   );

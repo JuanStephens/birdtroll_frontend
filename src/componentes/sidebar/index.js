@@ -6,8 +6,9 @@ import LoginIcon from '@mui/icons-material/Login';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-import FeaturedPlayListOutlinedIcon from "@mui/icons-material/FeaturedPlayListOutlined";
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import { IconOption } from "./IconOption";
 import { Button } from "@mui/material";
@@ -77,15 +78,8 @@ export const Sidebar = () => {
           Icon={BookmarkBorderOutlinedIcon}
         />
       </Link>
-      <Link onClick={(e) => activaOption("Listas", e)} className="mediasocial-option" to="/">
-        <IconOption
-          active={activeOption === "Listas" ? true : false}
-          primary
-          text="Listas"
-          link="/"
-          Icon={FeaturedPlayListOutlinedIcon}
-        />
-      </Link>*/}
+  */}
+
       
       <Link onClick={(e) => activaOption("Perfil", e)} className="mediasocial-option" to="/profile">
         <IconOption
@@ -94,6 +88,16 @@ export const Sidebar = () => {
           text="Perfil"
           link="/profile"
           Icon={PermIdentityOutlinedIcon}
+        />
+      </Link>
+
+      <Link onClick={(e) => activaOption("Premium", e)} className="mediasocial-option" to="/yappy">
+        <IconOption
+          active={activeOption === "Yappi" ? true : false}
+          primary
+          text="Premium"
+          link="/yappy"
+          Icon={WorkspacePremiumIcon}
         />
       </Link>
       

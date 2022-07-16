@@ -8,6 +8,7 @@ import { Widgets } from "./componentes/widgets";
 import { Login } from "./componentes/login";
 import { Register } from "./componentes/register";
 import {Profile} from "./componentes/profile";
+import {Yappy} from "./componentes/yappy";
 import {
   Routes,
   Route,
@@ -35,6 +36,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/yappy" element={<Yappy />} />
     </Routes>
     <Widgets />
     <GlobalStyles /> 
