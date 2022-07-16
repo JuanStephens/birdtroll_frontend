@@ -336,7 +336,6 @@ export const SideBarIcon = styled.image`
 display: flex;
 align-items: center;
 padding: 14px 10px;
-cursor: pointer;
 color: black;
 border-radius: 50px;
 >h2{
