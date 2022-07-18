@@ -33,7 +33,7 @@ export const Home = () => {
       <Header>
         <h2>Inicio</h2>
       </Header>
-      <TweetBox />
+      <TweetBox/>
 
      {
           post.map((pos) => (
