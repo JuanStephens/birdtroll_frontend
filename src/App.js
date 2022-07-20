@@ -12,10 +12,14 @@ import {Yappy} from "./componentes/yappy";
 import {
   Routes,
   Route,
+  Switch,
+  Link,
+  Redirect
 } from "react-router-dom";
 
 
 function App() {
+
   const [currentTab, setCurrentTab] = useState("login")
 
   return (
@@ -33,7 +37,12 @@ function App() {
     
   <Sidebar />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />}>
+        
+
+
+      </Route>
+      
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/yappy" element={<Yappy />} />

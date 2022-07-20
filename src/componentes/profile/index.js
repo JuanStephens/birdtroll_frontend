@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Header } from "./styles";
-import { ProfileBio } from "./ProfileBio";
-import { ProfileContent } from "./ProfileContent";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { ProfileContent } from "./profileContent";
+import {ProfileBio} from "./profileBio";
+import { Posts } from "../home/Posts";
 import axios from 'axios';
 
 export const Profile = () => {
@@ -30,15 +30,21 @@ export const Profile = () => {
 
   return (
     <Container>
-      {/* header */}
       <Header>
       <div className="top">
         <div className="info">
-         {/* 
-         Donde se almacenan los post del main
-         <h1>   {
+        </div>
+      </div>
+      <div className="cover">
+        <img src="https://picsum.photos/500/300" />
+      </div>
+      </Header>
+
+
+
+      {
           post.map((pos) => (
-            <ProfileContent
+            <ProfileBio
               key={pos.id}
               name={pos.name}
               userName={pos.userName}
@@ -49,17 +55,10 @@ export const Profile = () => {
               imagePost={pos.imagePost}
             />
           ))
-          } </h1>*/}
-          <span className="info__tweets-count">Tweets</span>
-        </div>
-      </div>
-      <div className="cover">
-        <img src="https://picsum.photos/500/300" />
-      </div>
-      </Header>
-      <ProfileBio/>
+        } 
+      
+     
 
-  
     </Container>
   );
 };

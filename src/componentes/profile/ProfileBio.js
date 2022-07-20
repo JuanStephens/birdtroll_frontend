@@ -1,10 +1,6 @@
 import React from "react";
-import { Container, Avatar, PostBody, PostDescription, Images, PostFooter } from "./styles";
+import { Post, Avatar, PostBody, PostDescription, Images, PostFooter } from "../home/styles";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import PublishIcon from "@mui/icons-material/Publish";
 
 export const ProfileBio = ({
   name,
@@ -16,30 +12,30 @@ export const ProfileBio = ({
   imagePost
 }) => {
   return (
-    <Container>
-      <div className="post-avatar">
-        <Avatar src={avatar} /> 
-        <PostBody>
+    <Post>
+    <div className="post-avatar">
+      <Avatar src={avatar} /> 
+      <PostBody>
+        <div>
           <div>
-            <div>
-              <h3>
-                {name}
-                <span>
-                  <VerifiedUserIcon className="post_icon" />
-                {userName}
-                </span>
-              </h3>
-              <PostDescription>
-                  <p>{text}</p>
-              </PostDescription>
-            </div>
-            <Images src={imagePost} />
-            <PostFooter>
-             
-            </PostFooter>
+            <h3>
+              {name}
+              <span>
+                <VerifiedUserIcon className="post_icon" />
+              {userName}
+              </span>
+            </h3>
+            <PostDescription>
+                <p>{text}</p>
+            </PostDescription>
           </div>
-        </PostBody>
-      </div>
-    </Container>
+          <Images src={imagePost} />
+          <PostFooter>
+           
+          </PostFooter>
+        </div>
+      </PostBody>
+    </div>
+  </Post>
   );
 };
