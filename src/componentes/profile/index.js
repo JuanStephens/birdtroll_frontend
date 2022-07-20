@@ -34,7 +34,9 @@ export const Profile = () => {
       <Header>
       <div className="top">
         <div className="info">
-          <h1>   {
+         {/* 
+         Donde se almacenan los post del main
+         <h1>   {
           post.map((pos) => (
             <ProfileContent
               key={pos.id}
@@ -47,7 +49,7 @@ export const Profile = () => {
               imagePost={pos.imagePost}
             />
           ))
-          } </h1>
+          } </h1>*/}
           <span className="info__tweets-count">Tweets</span>
         </div>
       </div>
