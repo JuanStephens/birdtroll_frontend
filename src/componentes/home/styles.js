@@ -122,6 +122,19 @@ export const Post = styled.div`
    .post_avatar{
     margin-top: 5px;
    }
+
+   .post-more{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    color: #5b7083;
+    transition: all 100ms ease-in;
+    >.MuiSvgIcon-root:hover:nth-child(1){
+    fill: #1da1f2;
+    cursor: pointer;
+}
+
+   }
 `
 
 export const PostBody = styled.div`
