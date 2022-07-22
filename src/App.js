@@ -20,7 +20,6 @@ import {
 
 function App() {
 
-  const [currentTab, setCurrentTab] = useState("login")
 
   return (
 

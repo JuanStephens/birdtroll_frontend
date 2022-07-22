@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Header } from "./styles";
-import { ProfileContent } from "./profileContent";
-import {ProfileBio} from "./profileBio";
+import { ProfileBio } from "./profileBio";
+
 import { Posts } from "../home/Posts";
 import axios from 'axios';
 
@@ -39,12 +39,22 @@ export const Profile = () => {
         <img src="https://picsum.photos/500/300" />
       </div>
       </Header>
-
-
+      {
+         post.map((pos, index) => ( index === 0 ?
+          <ProfileBio   
+          key={ pos.id}
+          name={ pos.name}
+          userName={ pos.userName}
+          verified={ pos.verified}
+          timestamp={ pos.timestamp}
+          avatar={ pos.avatar}
+          />  : ""
+      ))  
+      }
 
       {
           post.map((pos) => (
-            <ProfileBio
+            <Posts
               key={pos.id}
               name={pos.name}
               userName={pos.userName}

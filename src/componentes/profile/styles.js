@@ -148,6 +148,10 @@ export const Avatar = styled.img`
   width: 50px;
   height: 50px;
   object-fill: fill;
+  overflow: hidden;
+  border: 4px solid black;
+  background-color: #444;
+  
 `;
 
 export const Post = styled.div`
@@ -158,6 +162,7 @@ export const Post = styled.div`
    align-items: flex-start;
    .post_avatar{
     margin-top: 5px;
+    
    }
 `
 
@@ -196,6 +201,7 @@ border-radius: 20px;
 min-width: 100%;
 width: 100%;
 min-height: 300px;
+
 `
 
 export const PostFooter = styled.div`
