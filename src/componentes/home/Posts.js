@@ -29,14 +29,24 @@ export const Posts = ({
 
   }
 
-
-
  /* const deletePost = async (id) => {
     
     try {
       console.log(id);
       const posts = [];
       const { data } = await axios.delete(`${URI}api/posts/${id}`);
+        console.log(data);
+    } catch (e) {
+      console.log("Error deleting cached document:", e);
+    }
+  };*/
+
+  /* const updatePost = async (id) => {
+    
+    try {
+      console.log(id);
+      const posts = [];
+      const { data } = await axios.update(`${URI}api/posts/${id}`);
         console.log(data);
     } catch (e) {
       console.log("Error deleting cached document:", e);
@@ -50,7 +60,7 @@ export const Posts = ({
       <MoreHorizIcon fontSize="small" onClick={() => optionTogle(isOpen)}  />
       { isOpen ? (<Stack direction="row" spacing={2}>
 
-        <Button variant="outlined" color="secondary">Editar</Button>
+        <Button variant="outlined" color="secondary"/* onClick={() => updatePost(id)}*/>Editar</Button>
         <Button variant="outlined" color="error"/* onClick={() => deletePost(id)}*/>Borrar</Button>
         </Stack>):("") 
       }
