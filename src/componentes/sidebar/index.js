@@ -49,37 +49,6 @@ export const Sidebar = () => {
           Icon={HowToRegIcon}
         />
       </Link>
-{/*<Link onClick={(e) => activaOption("Mensajes", e)} className="mediasocial-option" to="/">
-        <IconOption
-          active={activeOption === "Mensajes" ? true : false}
-          text="Mensajes"
-          link="/"
-          Icon={MailOutlineIcon}
-        />
-      </Link>
-
-      <Link onClick={(e) => activaOption("Opcion", e)} className="mediasocial-option" to="/">
-        <IconOption
-          active={activeOption === "Opcion" ? true : false}
-          primary
-          text="Más Opciones"
-          link="/"
-          Icon={MoreHorizOutlinedIcon}
-        />
-      </Link>
-
-
-      <Link onClick={(e) => activaOption("Guardados", e)} className="mediasocial-option" to="/">
-        <IconOption
-          active={activeOption === "Guardados" ? true : false}
-          primary
-          text="Guardados"
-          link="/"
-          Icon={BookmarkBorderOutlinedIcon}
-        />
-      </Link>
-  */}
-
       
       <Link onClick={(e) => activaOption("Perfil", e)} className="mediasocial-option" to="/profile">
         <IconOption
@@ -100,7 +69,6 @@ export const Sidebar = () => {
           Icon={WorkspacePremiumIcon}
         />
       </Link>
-      
 
       <Button variant="outlined" fullWidth>
         Tweet

@@ -15,7 +15,6 @@ export const Home = () => {
       const { data } = await axios.get(`${URI}api/posts`);
       data.map((doc) => posts.push({ ...doc }));
       setPost(posts);
-      console.log(posts);
     } catch (e) {
       console.log("Error getting cached document:", e);
     }
@@ -35,8 +34,8 @@ export const Home = () => {
 
       {post.map((pos) => (
         <Posts
-          key={pos.__id}
-          id={pos.__id}
+          key={pos._id}
+          id={pos._id}
           name={pos.name}
           userName={pos.userName}
           verified={pos.verified}
