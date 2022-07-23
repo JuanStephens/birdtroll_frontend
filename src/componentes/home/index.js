@@ -27,6 +27,10 @@ export const Home = () => {
     getPost();
   }, []);
 
+ 
+
+
+
   return (
     <Container>
       {/* header */}
@@ -39,6 +43,7 @@ export const Home = () => {
           post.map((pos) => (
             <Posts
               key={pos.__id}
+              id={pos.__id}
               name={pos.name}
               userName={pos.userName}
               verified={pos.verified}
