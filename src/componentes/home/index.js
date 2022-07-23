@@ -27,6 +27,26 @@ export const Home = () => {
     getPost();
   }, []);
 
+  /*const deletePost = async () => {
+    try {
+      const posts = [];
+      const { data } = await axios.delete(`${URI}api/posts`);
+      data.map((doc) =>  
+      posts.push({...doc}) 
+      )
+        setPost(posts);
+        console.log(posts);
+    } catch (e) {
+      console.log("Error deleting cached document:", e);
+    }
+  };
+
+  useEffect(() => {
+   deletePost();
+  }, []);
+  */
+
+
   return (
     <Container>
       {/* header */}

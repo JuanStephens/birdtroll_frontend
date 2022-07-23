@@ -6,8 +6,12 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+//import { deletePost } from "../../../../birdtrol_backend/src/controllers/posts.controllers";
 
 export const Posts = ({
+  id,
   name,
   userName,
   verified,
@@ -26,13 +30,13 @@ export const Posts = ({
   return (
     <Post> 
       <div className="post-avatar">
-      <div className = "post-more" >
+      <div className = "post-more"> <br/>
       <MoreHorizIcon fontSize="small" onClick={() => optionTogle(isOpen)}  />
-      { isOpen ? (<section>
+      { isOpen ? (<Stack direction="row" spacing={2}>
 
-        <a href="#">Editar</a><br/>
-        <a href="#">Borrar</a>
-        </section>):("") 
+        <Button variant="outlined" color="secondary">Editar</Button>
+        <Button variant="outlined" color="error" /*</section>onClick={() => deletePost(id)}*/>Borrar</Button>
+        </Stack>):("") 
       }
       </div>
         <Avatar src={avatar} /> 

@@ -132,6 +132,7 @@ export const Post = styled.div`
     >.MuiSvgIcon-root:hover:nth-child(1){
     fill: #1da1f2;
     cursor: pointer;
+    
 }
 
    }
