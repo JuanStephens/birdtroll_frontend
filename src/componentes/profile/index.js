@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Header } from "./styles";
-import { ProfileBio } from "./profileBio";
+import { ProfileBio } from "./ProfileBio";
 
 import { Posts } from "../home/Posts";
 import axios from 'axios';

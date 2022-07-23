@@ -31,4 +31,8 @@ code {
   max-width: 1265px;
   margin: 0 auto;
 }
+
+.loader { 
+  margen : 100 px automático ; 
+}
 `

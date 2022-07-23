@@ -1,14 +1,15 @@
 import React from 'react'
-import { useState } from "react"
-import { Card, Tab, Tabs } from "@blueprintjs/core"
 import GlobalStyles from './styles/GlobalStyles'
 import { Home } from "./componentes/home";
+import { useContext, useState, useCallback, useEffect } from "react"
+import { UserContext } from "./context/UserContext"
 import { Sidebar } from "./componentes/sidebar";
 import { Widgets } from "./componentes/widgets";
 import { Login } from "./componentes/login";
 import { Register } from "./componentes/register";
 import {Profile} from "./componentes/profile";
 import {Yappy} from "./componentes/yappy";
+import Loader from "./Loader"
 import {
   Routes,
   Route,
@@ -19,38 +20,53 @@ import {
 
 
 function App() {
+  const [userContext, setUserContext] = useContext(UserContext)
+  const URI = process.env.URI || "http://localhost:4000/";
 
+  const verifyUser = useCallback(() => {
+    fetch(URI + "auth/refreshToken", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+    }).then(async response => {
+      if (response.ok) {
+        const data = await response.json()
+        setUserContext(oldValues => {
+          return { ...oldValues, token: data.token }
+        })
+      } else {
+        setUserContext(oldValues => {
+          return { ...oldValues, token: null }
+        })
+      }
+      // call refreshToken every 5 minutes to renew the authentication token.
+      setTimeout(verifyUser, 5 * 60 * 1000)
+    })
+  }, [setUserContext])
 
-  return (
+  useEffect(() => {
+    verifyUser()
+  }, [verifyUser])
 
-    <div className="App">
-      
-    {/* div className="App">
-         <Card elevation="1">
-      <Tabs id="Tabs" onChange={setCurrentTab} selectedTabId={currentTab}>
-        <Tab id="login" title="Login" panel={<Login />} />
-        <Tab id="register" title="Register" panel={<Register />} />
-        <Tabs.Expander />
-      </Tabs>
-    </Card> */}
-    
-  <Sidebar />
+  return userContext.token === null ? (
+    <Login />
+    ) : userContext.token ? (
+      <div className="App">
+    <Sidebar />
     <Routes>
-      <Route path="/" element={<Home />}>
-        
-
-
-      </Route>
-      
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/yappy" element={<Yappy />} />
     </Routes>
     <Widgets />
     <GlobalStyles /> 
-  
     </div>
-  );
+    ) : (
+      <Loader />
+    )
 }
 
 export default App;

@@ -33,12 +33,12 @@ export const Home = () => {
       <Header>
         <h2>Inicio</h2>
       </Header>
-      <TweetBox />
+      <TweetBox/>
 
      {
           post.map((pos) => (
             <Posts
-              key={pos.id}
+              key={pos.__id}
               name={pos.name}
               userName={pos.userName}
               verified={pos.verified}

@@ -93,7 +93,7 @@ export const Sidebar = () => {
 
       <Link onClick={(e) => activaOption("Premium", e)} className="mediasocial-option" to="/yappy">
         <IconOption
-          active={activeOption === "Yappi" ? true : false}
+          active={activeOption === "Premium" ? true : false}
           primary
           text="Premium"
           link="/yappy"

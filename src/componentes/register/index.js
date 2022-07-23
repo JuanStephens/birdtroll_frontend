@@ -16,7 +16,7 @@ export const Register = () => {
     <Container>
 
       <Header>
-      <h1>Prueba</h1>
+      <h1>Registro</h1>
       </Header>
 <section>
     <>
