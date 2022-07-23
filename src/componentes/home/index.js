@@ -27,24 +27,8 @@ export const Home = () => {
     getPost();
   }, []);
 
-  /*const deletePost = async () => {
-    try {
-      const posts = [];
-      const { data } = await axios.delete(`${URI}api/posts`);
-      data.map((doc) =>  
-      posts.push({...doc}) 
-      )
-        setPost(posts);
-        console.log(posts);
-    } catch (e) {
-      console.log("Error deleting cached document:", e);
-    }
-  };
+ 
 
-  useEffect(() => {
-   deletePost();
-  }, []);
-  */
 
 
   return (
@@ -58,7 +42,8 @@ export const Home = () => {
      {
           post.map((pos) => (
             <Posts
-              key={pos.id}
+              key={pos.__id}
+              id={pos.__id}
               name={pos.name}
               userName={pos.userName}
               verified={pos.verified}

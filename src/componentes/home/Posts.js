@@ -8,9 +8,11 @@ import PublishIcon from "@mui/icons-material/Publish";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 //import { deletePost } from "../../../../birdtrol_backend/src/controllers/posts.controllers";
-
+const URI = "http://localhost:4000/";
 export const Posts = ({
+  key,
   id,
   name,
   userName,
@@ -27,6 +29,20 @@ export const Posts = ({
 
   }
 
+
+
+ /* const deletePost = async (id) => {
+    
+    try {
+      console.log(id);
+      const posts = [];
+      const { data } = await axios.delete(`${URI}api/posts/${id}`);
+        console.log(data);
+    } catch (e) {
+      console.log("Error deleting cached document:", e);
+    }
+  };*/
+
   return (
     <Post> 
       <div className="post-avatar">
@@ -35,7 +51,7 @@ export const Posts = ({
       { isOpen ? (<Stack direction="row" spacing={2}>
 
         <Button variant="outlined" color="secondary">Editar</Button>
-        <Button variant="outlined" color="error" /*</section>onClick={() => deletePost(id)}*/>Borrar</Button>
+        <Button variant="outlined" color="error"/* onClick={() => deletePost(id)}*/>Borrar</Button>
         </Stack>):("") 
       }
       </div>
