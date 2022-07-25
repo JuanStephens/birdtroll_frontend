@@ -10,11 +10,12 @@ import { Register } from "./componentes/register";
 import {Profile} from "./componentes/profile";
 import {Yappy} from "./componentes/yappy";
 import Loader from "./Loader"
+import styled, {css} from "styled-components";
 import {
   Routes,
   Route,
+  Navigate,
   Switch,
-  Link,
   Redirect
 } from "react-router-dom";
 
@@ -49,15 +50,20 @@ function App() {
   }, [verifyUser])
 
   return userContext.token === null ? (
-    <Login />
+    <div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="*" element={<Navigate to="/login" />} />
+    </Routes>
+    <GlobalStyles /> 
+    </div>
     ) : userContext.token ? (
       <div className="App">
     <Sidebar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/yappy" element={<Yappy />} />
     </Routes>

@@ -17,6 +17,10 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import { UserContext } from "../../context/UserContext";
+import {
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 //import { deletePost } from "../../../../birdtrol_backend/src/controllers/posts.controllers";
 const URI = "http://localhost:4000/";
 export const Posts = ({
@@ -35,6 +39,7 @@ export const Posts = ({
   const [show, setShow] = useState(true);
   const [textPost, settextPost] = useState(text);
   const [userContext, setUserContext] = useContext(UserContext);
+  const Navigate = useNavigate();
 
   const optionTogle = (isBool) => {
     if (!userContext.details.premiun) {
@@ -86,6 +91,7 @@ export const Posts = ({
       const posts = [];
       const { data } = await axios.delete(`${URI}api/posts/${id}`);
       setShow(false);
+      //Navigate("/");
     } catch (e) {
       console.log("Error getting cached document:", e);
     }

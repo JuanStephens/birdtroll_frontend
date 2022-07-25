@@ -18,7 +18,7 @@ export const Widgets = () => {
         </DivIcon>
       </Header>
       <DivContent>
-        <h2>What´s Happening</h2>
+        <h2>¿Qué esta pasando?</h2>
       </DivContent>
       <TwitterTweetEmbed tweetId={"1540877687945822209"} />
       <TwitterTimelineEmbed

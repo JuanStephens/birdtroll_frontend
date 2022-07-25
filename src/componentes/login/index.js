@@ -1,10 +1,12 @@
 import React from 'react';
 //import ReactDOM from 'react-dom/client';
 import { Button, Callout, FormGroup, InputGroup } from "@blueprintjs/core"
+import ButtonMaterial from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Container, Header } from "./styles";
-import {useRef, useContext, useState, useEffect} from 'react';
+import { useRef, useContext, useState, useEffect } from 'react';
 import { UserContext } from "../../context/UserContext"
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 
 export const Login = () => {
@@ -23,9 +25,7 @@ export const Login = () => {
   setIsSubmitting(true)
   setError("")
 
-  const genericErrorMessage = "Something went wrong! Please try again later."
-  console.log({ username: email, password });
-  console.log(URI + "auth/login");
+  const genericErrorMessage = "¡Algo salió mal! Por favor, inténtelo de nuevo más tarde."
   fetch(URI + "auth/login", {
     method: "POST",
     credentials: "include",
@@ -33,13 +33,12 @@ export const Login = () => {
     body: JSON.stringify({ username: email, password }),
   })
     .then(async response => {
-      console.log('segunod')
       setIsSubmitting(false)
       if (!response.ok) {
         if (response.status === 400) {
-          setError("Please fill all the fields correctly!")
+          setError("¡Por favor, rellene todos los campos correctamente!")
         } else if (response.status === 401) {
-          setError("Invalid email and password combination.")
+          setError("Combinación de correo electrónico y contraseña no válida.")
         } else {
           setError(genericErrorMessage)
         }
@@ -65,16 +64,11 @@ export const Login = () => {
  }, [email, password])
 
   return (
-    
     <Container>
-      {/* header */}
-      <Header>
-      <h1>Login</h1>
-      </Header>
+      <TwitterIcon className="mediasocial-logo" />
         <>
         <section>
-           {error && <Callout intent="danger">{error}</Callout>}
-           <h1>Ingresar</h1>
+          <h1>Ingresar</h1>
            <form onSubmit = {formSubmitHandler} >
 
             <label htmlFor= "username">Usuario: </label>
@@ -96,19 +90,23 @@ export const Login = () => {
             value = {password}
             required                
             />
-
+ {error && <Callout intent="danger">{error}</Callout>}
+           
             <Button
           intent="primary"
           disabled={isSubmitting}
-          text={`${isSubmitting ? "Signing In" : "Sign In"}`}
+          text={`${isSubmitting ? "Accediendo" : "Acceder"}`}
           fill
           type="submit"
+          className="bp4-minimal"
         />
            </form>
            <p>
-            Nececitas una cuenta? <br/>
+            ¿Nececitas una cuenta? <br/>
             <span className="line">
-             <Link to ="/register">Registro</Link>
+             <Link to ="/register">
+              <ButtonMaterial variant="contained" size="small">Registro</ButtonMaterial>
+              </Link>
             </span>
            </p>
         </section>

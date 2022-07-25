@@ -73,7 +73,6 @@ export const Yappy = () => {
     <Loader />
   ) : (
     <Container>
-      {/* header */}
       <Header>
         <img
           class="yappy-logo"
@@ -84,7 +83,7 @@ export const Yappy = () => {
       </Header>
       <section>
         <form id="bird-form" action="">
-          <h1>Haste Premium!</h1>
+          <h1>{userContext.details.premiun ? "Ya eres premiun!" : "Haste Premium!"}</h1>
           <br />
           <IconOption
             active={false}
